@@ -1,0 +1,349 @@
+* {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+html, body {
+    overflow-x: hidden; /* Proíbe a rolagem para os lados */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
+@font-face {
+    font-family: "Lemonmilk";
+    src: url(fonts/LEMONMILK-Regular.otf);
+}
+
+@font-face {
+    font-family: "Altona";
+    src: url(fonts/Altone\ Trial-Regular.ttf);
+}
+
+
+
+
+
+
+
+html{
+    background-color: rgba(0, 0, 0, 0.884);
+}
+
+body{
+    margin: 10px;
+}
+
+/* CABEÇALHO*/
+
+
+  
+
+.nav{
+    margin: 0;
+}
+
+ul{
+    padding: 0
+
+}
+
+a{
+    padding: 10px;
+    text-decoration: none;
+    font-family: altona;
+    color: #120225;
+    background-color: white;
+    border-radius: 20px;  
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efeito suave ao passar o mouse */
+}
+
+li{
+    list-style-type: none; 
+}
+
+.cabecalho{
+    font-family: lemonmilk;
+    
+    color: white;
+    width: 40%;   
+    font-size: 2.5rem;
+    margin-bottom: 0;
+}
+
+.pcabecalho{
+    color: white;
+    width: 40%;
+    font-family: Altona;
+}
+
+.plateral{
+    color: white;
+    margin: 0;
+    font-family: Altona;
+}
+
+
+
+
+
+/* Seção 2  */
+
+.container {
+    display: grid;
+    /* 3 colunas e 3 linhas */
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: auto 1fr 1fr 1fr; /* Topo fixo, resto flexível */
+    
+    grid-template-areas: 
+        "banner banner banner"
+        "lado  cima   cima"  /* 3 na horizontal */
+        "lado  meio   meio"  /* Lado começa aqui + Meio (2 colunas) */
+        "lado  baixo  baixo"
+        ; /* Lado continua aqui + Baixo (2 colunas) */
+    
+    height: 150vh;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+
+
+
+.banner{
+    grid-area: banner;
+    background-image: url(img/new-superman-poster-banner-in-a-clean-version-v0-g24uo9ysrr0f1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px 20px 20px 30px;
+    margin: 0 auto;
+    display: grid;
+    border-radius: 12px;
+}
+
+.cima{
+    grid-area: cima;
+    border: 1px solid black;
+    border-radius: 12px; /* Cantos arredondados dão um ar moderno */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efeito suave ao passar o mouse */
+    /*background-color: #1a1a1a; /* 'Cor de fundo pros cards caso não tenham imagem */
+    border: none; /* Pode tirar aquele border preto agora se quiser */
+    background-image: url(img/ford\ vs\ ferrari.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: 50% 35%;
+    position: relative;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    padding: 5px;
+
+}
+
+.titulofilme{
+    font-family: lemonmilk;
+    color: aliceblue;
+    font-size: 2.5rem;
+    padding: 0;
+    margin: 0;
+}
+
+
+.cima:hover, .meio:hover, .lado:hover, .baixo:hover {
+    transform: translateY(-5px); /* O card sobe um pouquinho */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* A sombra aumenta e escurece */
+    cursor: pointer;
+}
+
+.meio{
+    grid-area: meio;
+    border-radius: 12px; /* Cantos arredondados dão um ar moderno */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efeito suave ao passar o mouse */
+    /*background-color: #1a1a1a; /* Cor de fundo pros cards caso não tenham imagem */
+    border: none; /* Pode tirar aquele border preto agora se quiser */
+     background-image: url(img/thunderbolts-8k-1920x1080-22287.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: 50% 25%;
+    position: relative;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    padding: 1px;
+
+}
+
+.lado{
+    grid-area: lado;
+    border-radius: 12px; /* Cantos arredondados dão um ar moderno */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efeito suave ao passar o mouse */
+    /*background-color: #1a1a1a; /* Cor de fundo pros cards caso não tenham imagem */
+    border: none; /* Pode tirar aquele border preto agora se quiser */
+    padding: 30px;
+      background-image: 
+      linear-gradient(to top, rgba(0, 0, 0, 11) 30%, transparent 90%),
+      url(img/arthur.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: 90% 30%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    
+}
+
+.baixo{
+    grid-area: baixo;
+    border-radius: 12px; /* Cantos arredondados dão um ar moderno */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efeito suave ao passar o mouse */
+    /*background-color: #1a1a1a; /* Cor de fundo pros cards caso não tenham imagem */
+    border: none; /* Pode tirar aquele border preto agora se quiser */
+
+    background-image: url(img/f1.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: 50% 20%;
+    position: relative;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    padding: 5px;
+
+}
+
+.linkfilme{
+    display: contents;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Quando a tela for menor que 768px (tablets e celulares) */
+@media (max-width: 768px) {
+
+    * {
+    box-sizing: border-box;
+    max-width: 100%;
+    }
+
+    html, body {
+        overflow-x: hidden; /* Proíbe a rolagem para os lados */
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        /* Mudamos para apenas 1 coluna */
+        grid-template-columns: 1fr; 
+        
+        /* Definimos a altura de cada bloco no celular */
+        grid-template-rows: auto 300px 300px 300px 300px; 
+        
+        /* Redenhamos o mapa: tudo um embaixo do outro */
+        grid-template-areas: 
+            "banner"
+            "cima"
+            "lado"
+            "meio"
+            "baixo";
+        
+        height: auto; /* Deixa o site crescer conforme o conteúdo */
+        width: 100%;       /* Ocupa a largura total disponível */
+        padding: 0 15px;   /* Cria o respiro lateral interno, sem expulsar as células */
+        margin: 15px 0;    /* Remove margens laterais externas que causam o "passar pro lado" */
+        grid-template-columns: 1fr; /* Força uma coluna só */
+    }
+
+    .banner, .cima, .lado, .meio, .baixo {
+        width: 100% !important; 
+        margin: 0; 
+    }
+
+    /* Ajuste nos textos para não ficarem gigantes no celular */
+
+    .cabecalho, .titulofilme {
+        font-size: 1.8rem;
+        width: 100%; /* Ocupa a largura total da tela pequena */
+    }
+
+    .pcabecalho {
+        width: 100%;
+    }
+
+
+    .nav ul li {
+    display: flex;
+    flex-wrap: wrap; /* Isso faz os links pularem para a linha de baixo se não couberem */
+    gap: 10px;       /* Espaço entre eles */
+    justify-content: center;
+}
+
+    .nav a {
+    font-size: 0.9rem; /* Diminuir um pouco a fonte no celular ajuda muito */
+    padding: 8px 12px;
+}
+
+.plateral{
+    color: white;
+    margin: 0;
+    font-family: Altona;
+    font-size: 0.9rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.lado{
+    background-position: 50% 25%;
+}
+
+.banner{
+    background-position: 10% 91%;
+}
+
+
+}
+
+
+@media (min-width: 1600px) {
+    .cabecalho {
+        font-size: 4rem; /* Título maior para ser lido do sofá */
+    }
+    .container {
+        gap: 30px; /* Aumenta o espaço entre os cards */
+    }
+}
+
+@media(min-width: 1900px){
+
+    
+    .banner{
+    grid-area: banner;
+    background-image: url(img/new-superman-poster-banner-in-a-clean-version-v0-g24uo9ysrr0f1.jpg);
+    width: 100%;
+    background-repeat: no-repeat;
+    
+    margin: 0 auto;
+    display: grid;
+    border-radius: 12px;
+}
+
+h1{
+    font-size: 2.8rem;
+}
+
+p, a{
+    font-size: 2rem;
+}
+
+
+}

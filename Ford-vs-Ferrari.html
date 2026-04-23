@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ford vs Ferrari</title>
+<style>
+
+
+        * {
+            box-sizing: border-box;
+            max-width: 100%;
+        }
+
+
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        html{
+        background-color: rgba(0, 0, 0, 0.884);
+        }
+
+        @font-face {
+        font-family: "Lemonmilk";
+        src: url(fonts/LEMONMILK-Regular.otf);
+        }
+
+        @font-face {
+            font-family: "Altona";
+            src: url(fonts/Altone\ Trial-Regular.ttf);
+        }
+
+        
+        
+
+
+    .banner{
+        grid-area: banner;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7) 30%, transparent 90%),
+         url(img/ford2.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: 50px ;
+        margin: 0 auto;
+        display: grid;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        height: 70vh;
+        min-height: 12px;
+        
+    }
+
+        .nav{
+        display: flex;
+        justify-content: center; /* Centraliza horizontalmente */
+        align-items: center;     /* Centraliza verticalmente */
+        padding: 10px;
+    }
+
+    
+
+    ul{
+        padding: 0;
+        
+
+    }
+
+    a{
+        padding: 10px;
+        text-decoration: none;
+        font-family: altona;
+        color: #120225;
+        background-color: white;
+        border-radius: 20px;  
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Sombra suave */
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efeito suave ao passar o mouse */
+       
+        
+    }
+
+    li{
+        list-style-type: none; 
+        
+        
+}
+
+    h1{
+        font-family: lemonmilk;
+        color: white;
+        margin: 0;
+        max-width: 600px;
+        font-size: 50px;
+    }
+
+    p{
+        font-family: altona;
+        color: white;
+        max-width: 500px;
+        margin: 10;
+    }
+
+    .elenco{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        width: 600px;
+        gap: 10px;
+    }
+
+    .item{
+         display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 110px; 
+        border-radius: 12px;    
+        padding: 10px;         
+        background: rgba(0, 0, 0, 0.3); 
+    }
+
+    .item img {
+        width: 100%;            
+        height: 130px;
+        
+        border-radius: 8px;
+        margin-bottom: 10px;     /* Espaço para a legenda */
+        object-fit: cover;
+    }
+
+    .item span {
+    color: white;
+    font-family: 'Altona', sans-serif;
+    font-size: 0.9rem;     
+    text-align: center;
+    
+    }
+
+    .filme{
+        width: 95%;
+        max-width: 900px;
+        margin: 30px auto; 
+        aspect-ratio: 16 / 9; 
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+        border: 1px solid #333;
+    }
+
+    iframe{
+        width: 100%;
+    max-width: 900px; 
+    margin: 30px auto; 
+    aspect-ratio: 16 / 9; 
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    border: 1px solid #333;
+    }
+
+
+
+
+    @media (max-width: 786px){
+     html, body {
+        overflow-x: hidden;
+        width: 100%;
+        position: relative;
+    }
+
+    .nav ul {
+        display: flex;
+        flex-direction: column; /* Links um embaixo do outro */
+        gap: 10px;
+        align-items: center;
+    }
+
+    .banner {
+        width: 100% !important;
+        border-radius: 0; /* Tirar o raio no celular ajuda a não vazar */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.3) 30%, transparent 80%),
+         url(img/ford2.jpg);
+         background-position: 30% ;
+         height: 60vh;
+        
+    }
+
+    .banner h1 {
+        font-size: 2rem;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    p, .pcabecalho {
+        width: 100% !important; /* Força o parágrafo a caber na tela */
+        font-size: 1rem;
+        text-align: left;
+    }
+
+    .elenco {
+        width: 50% !important;
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+        
+        
+    }
+
+    .item {
+        width: 140px; /* Aumenta um pouco o card do ator para o toque */
+    }
+
+    .filme {
+        width: 90%;
+        height: auto;
+    }
+
+    }
+
+
+    @media(min-width: 1900px){
+        h1{
+            font-size: 5rem;
+        }
+
+        p{
+            font-size: 1.2rem;
+            width: 900px;
+        }
+
+
+        .nav ul{
+            font-size: 2rem;
+        }
+
+        
+        .item{
+         display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 150px; 
+        height: auto;
+        border-radius: 12px;    
+        padding: 10px;         
+        background: rgba(0, 0, 0, 0.3); 
+        }
+            
+        
+    }
+
+ 
+
+
+
+
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <ul>
+            <li>
+                <a href="index.html">Home</a>
+                <a href="filmes.html">Filmes</a>
+                <a href="">Séries</a>
+                <a href="">Documentários</a>
+                <a href="">Ao vivo</a>
+            </li>
+        </ul>
+
+        </div>
+
+    <div class="banner">
+
+        <h1 class="cabecalho">Ford vs Ferrari</h1>
+        <p class="pcabecalho">"Ford vs. Ferrari" (2019) narra a história real da missão da Ford em construir um carro capaz de vencer a inabalável Ferrari nas 24 Horas de Le Mans de 1966. O designer Carroll Shelby (Matt Damon) e o piloto Ken Miles (Christian Bale) unem forças para superar obstáculos corporativos e técnicos, criando o revolucionário Ford GT40.</p>
+
+        <p class="pcabecalho">ELENCO:</p>
+
+        <div class="elenco">
+            <div class="item ator1">
+                <img src="img/bale.jpg" alt="">
+                <span>Christian Bale</span>
+            </div>
+            <div class="item ator2">
+                <img src="img/mattdamon.jpg" alt="">
+                <span>Matt Damon</span>
+
+            </div>
+            <div class="item ator3">
+                <img src="img/Caitriona Balfe.jpeg" alt="">
+                <span>Caitriona Balfe</span>
+
+            </div>
+            <div class="item ator4">
+                <img src="img/Jon Bernthal.jpg" alt="">
+                <span>Jon Bernthal</span>
+            </div>
+            <div class="item ator5">
+                <img src="img/Josh Lucas.jpg" alt="">
+                <span>Josh Lucas</span>
+            </div>
+        </div>
+        </div>
+
+        <div class="filme">
+                <iframe src="https://drive.google.com/file/d/1qy7VL5Qk5cWwty2yUejcX4G2FGIMmqAr/preview" width="640" height="480"
+                 allow="autoplay; fullscreen" 
+                allowfullscreen="true">
+                
+                
+                ></iframe>
+            
+            ></iframe>
+        </div>
+</body>
+</html>
